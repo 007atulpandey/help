@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<style>
+.hoverme {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.hoverme .popup {
+  visibility: hidden;
+  width: 120px;
+  background-color: grey;
+  color: black;
+  font-weight:bold;
+  text-align: center;
+  border-radius: 6px 6px 0px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.hoverme .popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  margin-left:-20px;
+  margin-top:-10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent grey transparent transparent;
+}
+
+.hoverme:hover .popup {
+  visibility: visible;
+}
+</style>
+<body style="text-align:center;">
+
+
+<div class="hoverme">Hover over me
+  <span class="popup">hello world</span>
+</div>
+
+</body>
+</html>
